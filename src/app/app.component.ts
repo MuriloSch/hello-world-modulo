@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import * as modulo1 from './modulo1';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hello-world-modulo';
+  title = modulo1.texto;
+
+  media = modulo1.calcularMedia(8.5, 9.0, 7.5).toFixed(2);
+
+  diaAtual = 3; // quarta-feira
+  nomeDia = modulo1.obterNomeDia(this.diaAtual);
 }
